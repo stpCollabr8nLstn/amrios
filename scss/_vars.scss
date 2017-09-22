@@ -1,0 +1,72 @@
+// Rem Sizing
+$base : 16px;
+
+// Transitions
+
+$col-transition-effect : all .01s ease-in, color .5s ease-in;
+@mixin col-transition {
+  transition: $col-transition-effect;
+  -webkit-transition: $col-transition-effect;
+}
+
+@function rem($pixels) {
+  @return ($pixels / $base) * 1rem;
+}
+
+// Color Palette
+$text         : #000000;
+$text-inverse : #ffffff;
+
+// Use dark to pass accessiblity
+$light-blue   : #0081FA;
+$medium-blue  : #001BFF;
+$dark-blue    : #213B80;
+$light-teal   : #5CB6BC;
+$medium-teal  : #007E80;
+$dark-teal    : #00616F;
+$light-pink   : #FFBBE2;
+$medium-pink  : #FF3D7F;
+$dark-pink    : #B00060;
+$light-purple : #C08FD9;
+$medium-purple: #78309C;
+$dark-purple  : #441D63;
+
+// Background Gradient Animation
+@mixin gradient {
+  0% { background-position: 0% 50% }
+  50% { background-position: 100% 50% }
+  100% { background-position: 0% 50% }
+}
+
+@-webkit-keyframes Gradient {
+	@include gradient;
+}
+
+@keyframes Gradient {
+	@include gradient;
+}
+
+@mixin background-gradient($tint) {
+  $c1 : $dark-blue;
+  $c2 : $dark-teal;
+  $c3 : $dark-pink;
+  $c4 : $dark-purple;
+  @if $tint == light {
+    $c1 : $light-blue;
+    $c2 : $light-teal;
+    $c3 : $light-pink;
+    $c4 : $light-purple;
+  }
+  background: linear-gradient(-45deg, $c1, $c2, $c3, $c4);
+  background-size: 400% 400%;
+  -webkit-animation: Gradient 15s ease infinite;
+  animation: Gradient 15s ease infinite;
+}
+
+// Text Gradient Animation
+@mixin text-gradient {
+  color: transparent;
+  @include background-gradient('dark');
+  background-clip: text;
+  -webkit-background-clip: text;
+}
