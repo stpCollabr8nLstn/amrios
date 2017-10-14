@@ -2,16 +2,17 @@ html, body {
   height: 100%;
   width: 100%;
   font-family: 'Source Code Pro', monospace;
+  overflow: hidden;
 }
 
 .amr--main {
   height: 100%;
   width: 100%;
+  background: $text-inverse;
 }
 
 .amr--header {
-  height: 40%;
-  background: $text-inverse;
+  height: 50%;
 }
 
 .amr--header-title {
@@ -25,7 +26,7 @@ html, body {
 }
 
 .amr--content {
-  height: 60%;
+  height: 50%;
   @include background-gradient('dark');
 }
 
@@ -61,16 +62,19 @@ html, body {
     .amr--col-content {
       background: $text-inverse;
       color: $text;
+      overflow: hidden;
+
     }
 
     .amr--col-info {
       visibility: visible;
       opacity: 1;
-      max-height: 60%;
+      max-height: 80%;
+      overflow: auto;
     }
 
     .amr--col-title {
-      h3 {
+      h4 {
         color: $dark-purple;
       }
     }
@@ -96,6 +100,11 @@ html, body {
   max-height: 0;
   opacity: 0;
   @include col-transition;
+}
+
+.amr--hidden-info {
+  margin-right: rem(-31px);
+  padding-right: rem(31px);
 }
 
 .amr--col-items {

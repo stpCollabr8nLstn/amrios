@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");
-
 @-webkit-keyframes Gradient {
   0% {
     background-position: 0% 50%; }
@@ -17,16 +16,16 @@
 html, body {
   height: 100%;
   width: 100%;
-  font-family: 'Source Code Pro', monospace; }
-  width: 100%; }
+  font-family: 'Source Code Pro', monospace;
+  overflow: hidden; }
 
 .amr--main {
   height: 100%;
-  width: 100%; }
+  width: 100%;
+  background: #ffffff; }
 
 .amr--header {
-  height: 40%;
-  background: #ffffff; }
+  height: 50%; }
 
 .amr--header-title {
   display: flex;
@@ -43,7 +42,7 @@ html, body {
     -webkit-background-clip: text; }
 
 .amr--content {
-  height: 60%;
+  height: 50%;
   background: linear-gradient(-45deg, #213B80, #00616F, #B00060, #441D63);
   background-size: 400% 400%;
   -webkit-animation: Gradient 15s ease infinite;
@@ -76,12 +75,14 @@ html, body {
     color: transparent; }
     .amr--col:hover .amr--col-content {
       background: #ffffff;
-      color: #000000; }
+      color: #000000;
+      overflow: hidden; }
     .amr--col:hover .amr--col-info {
       visibility: visible;
       opacity: 1;
-      max-height: 60%; }
-    .amr--col:hover .amr--col-title h3 {
+      max-height: 80%;
+      overflow: auto; }
+    .amr--col:hover .amr--col-title h4 {
       color: #441D63; }
 
 .amr--col__0:hover {
@@ -101,6 +102,10 @@ html, body {
   opacity: 0;
   transition: all 0.01s ease-in, color 0.5s ease-in;
   -webkit-transition: all 0.01s ease-in, color 0.5s ease-in; }
+
+.amr--hidden-info {
+  margin-right: -1.9375rem;
+  padding-right: 1.9375rem; }
 
 .amr--col-items {
   list-style: none; }
