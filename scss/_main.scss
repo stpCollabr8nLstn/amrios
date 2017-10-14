@@ -1,0 +1,108 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Source Code Pro', monospace;
+}
+
+.amr--main {
+  height: 100%;
+  width: 100%;
+}
+
+.amr--header {
+  height: 40%;
+  background: $text-inverse;
+}
+
+.amr--header-title {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: rem(32px);
+  h1 {
+    @include text-gradient;
+  }
+}
+
+.amr--content {
+  height: 60%;
+  @include background-gradient('dark');
+}
+
+.amr--col-content {
+  background: transparent;
+  margin: rem(16px);
+  padding: rem(16px);
+  height: calc(100% - 32px);
+  width: calc(100% - 16px);
+  border-radius: rem(4px);
+  color: $text-inverse;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+
+}
+
+.amr--col-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.amr--col {
+  display: flex;
+  color: $text-inverse;
+  padding: 0;
+  &:hover {
+    outline: 1px solid $text-inverse;
+    color: transparent;
+
+    .amr--col-content {
+      background: $text-inverse;
+      color: $text;
+    }
+
+    .amr--col-info {
+      visibility: visible;
+      opacity: 1;
+      max-height: 60%;
+    }
+
+    .amr--col-title {
+      h3 {
+        color: $dark-purple;
+      }
+    }
+  }
+}
+
+.amr--col__0 {
+  &:hover { background: $light-pink; }
+}
+
+.amr--col__1 {
+  &:hover { background: $light-purple; }
+}
+
+.amr--col__2 {
+  &:hover { background: $light-teal; }
+}
+
+.amr--col-info {
+  display: flex;
+  justify-content: flex-start;
+  visibility: hidden;
+  max-height: 0;
+  opacity: 0;
+  @include col-transition;
+}
+
+.amr--col-items {
+  list-style: none;
+}
+
+.amr--social-icon {
+  width: rem(160px);
+  padding: rem(16px) 0;
+}
