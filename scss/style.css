@@ -16,8 +16,10 @@
 html, body {
   height: 100%;
   width: 100%;
-  font-family: 'Source Code Pro', monospace;
-  overflow: hidden; }
+  font-family: 'Source Code Pro', monospace; }
+  @media screen and (min-width: 768px) {
+    html, body {
+      overflow: hidden; } }
 
 .amr--main {
   height: 100%;
@@ -25,13 +27,22 @@ html, body {
   background: #ffffff; }
 
 .amr--header {
-  height: 50%; }
+  height: 40%; }
+
+.amr--profile {
+  max-width: 8rem;
+  max-height: 8rem;
+  border-radius: 50%; }
 
 .amr--header-title {
   display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  padding-bottom: 4rem; }
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 2rem; }
+  @media screen and (min-width: 768px) {
+    .amr--header-title {
+      padding-bottom: 4rem; } }
   .amr--header-title h1 {
     color: transparent;
     background: linear-gradient(-45deg, #213B80, #00616F, #B00060, #441D63);
@@ -39,10 +50,11 @@ html, body {
     -webkit-animation: Gradient 15s ease infinite;
     animation: Gradient 15s ease infinite;
     background-clip: text;
-    -webkit-background-clip: text; }
+    -webkit-background-clip: text;
+    margin-top: 1rem; }
 
 .amr--content {
-  height: 50%;
+  height: 60%;
   background: linear-gradient(-45deg, #213B80, #00616F, #B00060, #441D63);
   background-size: 400% 400%;
   -webkit-animation: Gradient 15s ease infinite;
@@ -68,6 +80,7 @@ html, body {
 
 .amr--col {
   display: flex;
+  flex-grow: 1;
   color: #ffffff;
   padding: 0; }
   .amr--col:hover {

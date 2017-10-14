@@ -2,7 +2,9 @@ html, body {
   height: 100%;
   width: 100%;
   font-family: 'Source Code Pro', monospace;
-  overflow: hidden;
+  @media screen and (min-width : 768px) {
+    overflow: hidden;
+  }
 }
 
 .amr--main {
@@ -15,13 +17,24 @@ html, body {
   height: 40%;
 }
 
+.amr--profile {
+  max-width: rem(128px);
+  max-height: rem(128px);
+  border-radius: 50%;
+}
+
 .amr--header-title {
   display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  padding-bottom: rem(64px);
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  @media screen and (min-width : 768px) {
+    padding-bottom: rem(64px);
+  }
+  padding-bottom: rem(32px);
   h1 {
     @include text-gradient;
+    margin-top: rem(16px);
   }
 }
 
@@ -53,6 +66,7 @@ html, body {
 
 .amr--col {
   display: flex;
+  flex-grow: 1;
   color: $text-inverse;
   padding: 0;
   &:hover {
