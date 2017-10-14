@@ -32,7 +32,7 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  padding-bottom: 2rem; }
+  padding-bottom: 4rem; }
   .amr--header-title h1 {
     color: transparent;
     background: linear-gradient(-45deg, #213B80, #00616F, #B00060, #441D63);
