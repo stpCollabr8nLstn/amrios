@@ -1,16 +1,24 @@
-function element(selector) {
-  return document.querySelector(selector);
+const activeProfile = document.querySelector(".amr--profile");
+let profiles = ["img/profile.jpg", "img/profile.jpeg", "img/BillyBob.jpg"];
+let index = 0;
+let interval = null;
+
+nextProfile = () => {
+  index = (index === profiles.length - 1) ? 0 : index + 1;
+  activeProfile.src = profiles[index];
 }
 
-function element_all(selector) {
-  return document.querySelectorAll(selector);
-}
+activeProfile.addEventListener("mouseover", (e) => {
+  interval = setInterval(nextProfile, 1500);
+});
+
+activeProfile.addEventListener("mouseout", (e) => {
+  clearInterval(interval);
+});
 
 
-function eventListener() {
-}
-
-
-window.onload = function() {
-  eventListener();
-}
+console.log("    *     ||   ||  ======  oo     *    ");
+console.log("   ***    ||   ||    ||    oo    ***   ");
+console.log("  *****   ||===||    ||    oo   *****  ");
+console.log("   ***    ||   ||    ||          ***   ");
+console.log("    *     ||   ||  ======  OO     *    ");

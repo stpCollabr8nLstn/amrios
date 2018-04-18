@@ -23,6 +23,11 @@ html, body {
   border-radius: 50%;
 }
 
+.amr--profile__hidden {
+  height: 0;
+  width: 0;
+}
+
 .amr--header-title {
   display: flex;
   flex-direction: column;
@@ -85,6 +90,8 @@ html, body {
       opacity: 1;
       max-height: 80%;
       overflow: auto;
+      display: flex;
+      justify-content: center;
     }
 
     .amr--col-title {
@@ -123,6 +130,12 @@ html, body {
 
 .amr--col-items {
   list-style: none;
+  padding-left: 0;
+  margin-top: rem(16px);
+  li {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .amr--social-icon {
